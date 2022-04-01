@@ -1,7 +1,9 @@
-import structlog
+import logging
+import os
 from alembic import context
 from sqlalchemy import engine_from_config, pool
 
+import orchestrator
 from orchestrator.db.database import BaseModel
 from orchestrator.settings import app_settings
 
@@ -9,8 +11,9 @@ from orchestrator.settings import app_settings
 # access to the values within the .ini file in use.
 config = context.config
 
-# Setup logging
-logger = structlog.get_logger()
+# Interpret the config file for Python logging.
+# This line sets up loggers basically.
+logger = logging.getLogger("alembic.env")
 
 config.set_main_option("sqlalchemy.url", app_settings.DATABASE_URI)
 

@@ -43,9 +43,10 @@ def load_company(app: OrchestratorCore) -> None:
 
 
 def load_company_cli(app: Typer) -> None:
-    import company.products  # noqa: F401  Side-effects
-    import company.schedules  # noqa: F401  Side-effects
-    import company.workflows  # noqa: F401  Side-effects
+    pass
+    # import company.products  # noqa: F401  Side-effects
+    # import company.schedules  # noqa: F401  Side-effects
+    # import company.workflows  # noqa: F401  Side-effects
 
     # Todo: implement a CLI command
     # app.add_typer(company.app, name="company")
