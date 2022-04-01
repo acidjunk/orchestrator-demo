@@ -1,0 +1,15 @@
+#!/bin/sh
+SCRIPT_DIR=$(dirname "$0")
+cd "$SCRIPT_DIR/.." || exit
+
+export PYTHONPATH=$PWD
+APP=main:app
+HOST=0.0.0.0
+if [ "$HTTP_PORT" ]; then
+    PORT=$HTTP_PORT
+else
+    PORT=8080
+fi
+
+PYTHONPATH=. python main.py db upgrade heads
+gunicorn -w 4 -k uvicorn.workers.UvicornWorker --capture-output --access-logfile '-' --error-logfile '-' --config 'python:nwastdlib.logging' --bind $HOST:$PORT $APP --timeout 60 --max-requests 1500 --max-requests-jitter 150 --graceful-timeout 600 "$@"

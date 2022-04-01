@@ -1,0 +1,21 @@
+-r test.txt
+debugpy
+mypy_extensions
+pre-commit
+pydocstyle
+python-dotenv
+twine
+types-aiofiles
+types-certifi
+types-click
+types-itsdangerous
+types-jinja2
+types-orjson
+types-pkg_resources
+types-python-dateutil
+types-pytz
+types-redis
+types-requests
+types-toml
+types-ujson
+watchdog

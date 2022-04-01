@@ -1,0 +1,31 @@
+[tool.isort]
+profile="black"
+line_length = 120
+forced_separate = ["server", "company"]
+skip = ["src", "venv"]
+known_third_party=["pynso", "pydantic"]
+known_first_party=[]
+
+[tool.black]
+line-length = 120
+target-version = ["py310", ]
+exclude = '''
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | venv
+    | src
+  )/
+)
+'''
+
+[tool.nitpick]
+style="github://workfloworchestrator/nitpick-style@main/nitpick-style-fastapi.toml"
+
+[tool.pyright]
+ignore = ["test", "workfloworchestrator"]

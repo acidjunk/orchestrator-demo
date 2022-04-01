@@ -1,0 +1,20 @@
+{
+  "forms": {
+    "fields": {
+      "example_field": "Label name",
+      "example_field_info": "Extended help/info"
+    }
+  },
+  "subscription": {
+  },
+  "subscription_instance": {
+    "node.location": "Resource type example"
+  },
+  "workflow": {
+    "create_node": "Create node",
+    "modify_node": "Modify Node",
+    "terminate_nsistp": "Terminate NSISTP",
+    "terminate_node": "Terminate Node",
+    "validate_node": "Validate Node"
+  }
+}

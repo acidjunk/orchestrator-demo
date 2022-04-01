@@ -1,0 +1,5 @@
+.venv
+.cache
+.idea
+.vscode
+.mypy_cache
